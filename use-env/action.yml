@@ -17,8 +17,10 @@ runs:
 
     - name: Install dependencies
       run: npm install
+      shell: bash
       working-directory: ${{ github.action_path }}
 
     - name: Run script
       run: node src/index.js
+      shell: bash
       working-directory: ${{ github.action_path }}
