@@ -15,7 +15,7 @@ jobs:
           variables: |
             - branch: prod
               VAR_X: PRODUCTION-STUFF
-              VAR_Y: HELLO WORLD
+              VAR_Y: 123
 
             - branch: dev
               VAR_X: DEV-STUFF
