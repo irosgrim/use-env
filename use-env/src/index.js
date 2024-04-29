@@ -6,9 +6,12 @@ async function run () {
   try {
     const ref = github.context.ref;
     const branchName = ref.replace('refs/heads/', '');
+    console.log(branchName);
 
     const varsInput = core.getInput('variables');
     const environments = yaml.load(varsInput);
+
+    console.log(environments);
 
     const environment = environments.find(env => env.branch === branchName);
     if (!environment) {
