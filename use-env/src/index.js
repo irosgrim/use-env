@@ -17,7 +17,9 @@ try {
     }
   });
 
-  console.log(`branch: '${branchName}' vars set as outputs`);
+  console.log(`Setting variables for BRANCH: ${branchName}`);
+  console.log(`DONE`);
+
 } catch (error) {
   core.setFailed(`Failed to process input or perform action: ${error.message}`);
 }

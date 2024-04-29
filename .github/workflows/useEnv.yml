@@ -11,7 +11,7 @@ jobs:
         id: get_vars
         uses: ./use-env
         with:
-          branch: "dev"
+          branch: ${{github.ref == 'refs/heads/main' && 'prod' || github.ref == 'refs/heads/demo' && 'demo' || github.ref == 'refs/heads/dev' && 'dev'}}
           envs: |
             [
               {
