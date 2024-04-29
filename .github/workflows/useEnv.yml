@@ -8,16 +8,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Get Envs
+        id: get_vars
         uses: ./
         with:
+          branch: "dev"
           envs: |
             [
               {
                 "branch": "demo",
-                "VAR_1": 123
+                "VAR_X": "aaaa-demo",
+                "VAR_Y": 42
               },
               {
                 "branch": "dev",
-                "VAR_X": "XXX"
+                "VAR_X": "bbbb-dev",
+                "VAR_Y": "some string"
               }
             ]
+      - name: Use outputs
+        run: |
+          echo "Output VAR_X: ${{ steps.get_vars.outputs.VAR_X }}"
+          echo "Output VAR_Y: ${{ steps.get_vars.outputs.VAR_Y }}"

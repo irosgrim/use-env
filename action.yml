@@ -3,14 +3,18 @@ description: 'testing actions'
 author: 'ion'
 
 inputs:
+  branch:
+    description: 'provide branch name'
+    required: true
+    default: ''
   envs:
     description: 'envs'
     required: true
     default: ''
 
-# Define your outputs here.
 outputs:
-  vars:
+  #dynamic
+  key:
     description: 'the vars'
 
 runs:
