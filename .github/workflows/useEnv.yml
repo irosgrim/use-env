@@ -13,7 +13,7 @@ jobs:
         with:
           branch: ${{github.ref == 'refs/heads/main' && 'prod' || github.ref == 'refs/heads/demo' && 'demo' || github.ref == 'refs/heads/dev' && 'dev'}}
           variables: |
-            - branch: main
+            - branch: prod
               VAR_X: PRODUCTION-STUFF
               VAR_Y: HELLO WORLD
 
