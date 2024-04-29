@@ -18,9 +18,9 @@ runs:
     - name: Install dependencies
       run: npm install
       shell: bash
-      working-directory: ${{ github.workspace }}/use-env
+      working-directory: ${{ github.workspace }}
 
     - name: Run script
       run: node src/index.js
       shell: bash
-      working-directory: ${{ github.workspace }}/use-env
+      working-directory: ${{ github.workspace }}
