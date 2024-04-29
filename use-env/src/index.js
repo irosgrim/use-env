@@ -6,7 +6,7 @@ try {
   const varsInput = core.getInput('variables');
   const environments = yaml.load(varsInput);
 
-  console.log(varsInput);
+  console.log({varsInput});
 
   const environment = environments.find(env => env.branch === branchName);
   if (!environment) {
