@@ -15,6 +15,11 @@ jobs:
           envs: |
             [
               {
+                "branch": "prod",
+                "VAR_X": "PRODUCTION-STUFF",
+                "VAR_Y": "HELLO WORLD"
+              },
+              {
                 "branch": "demo",
                 "VAR_X": "aaaa-demo",
                 "VAR_Y": 42
