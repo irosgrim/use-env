@@ -7,9 +7,9 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v4
-      - name: Get Envs
+      - name: Setup variables based on branch
         id: get_vars
-        uses: ./
+        uses: ./use-env
         with:
           branch: "dev"
           envs: |
