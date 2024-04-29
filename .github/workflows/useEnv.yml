@@ -10,14 +10,17 @@ jobs:
             - uses: ./
               with:
                 envs: |
-                    BRANCH=demo
-                    VAR1=hello
-                    VAR2=world
-                    VAR_N=42
-
-                    BRANCH=dev
-                    VAR_X=xxx
-                    VAR_Y=yyy
+                    [
+                        {
+                            "branch": "demo"
+                            "VAR_1": 123
+                        },
+                        {
+                            "branch": "dev"
+                            "VAR_X": "XXX"
+                        },
+                    ]
+                    
 
                     
                     

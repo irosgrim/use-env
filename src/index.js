@@ -7,6 +7,10 @@ async function run() {
             throw new Error("No envs specified");
         }
         console.log({envs});
+        
+        const env = JSON.parse(envs);
+        console.log(env);
+
         setOutput("some-env", "value-xxxx");
         
     } catch (error) {
