@@ -11,6 +11,7 @@ async function run () {
     const varsInput = core.getInput('variables');
     const environments = yaml.load(varsInput);
 
+    console.log({varsInput})
     console.log(environments);
 
     const environment = environments.find(env => env.branch === branchName);
