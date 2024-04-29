@@ -1,26 +1,24 @@
 name: "Use env"
 on:
-    workflow_dispatch:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
-    use-env:
-        runs-on: "ubuntu-latest"
-        steps:
-            - uses: actions/checkout@v2
-            - uses: ./
-              with:
-                envs: |
-                    [
-                        {
-                            "branch": "demo"
-                            "VAR_1": 123
-                        },
-                        {
-                            "branch": "dev"
-                            "VAR_X": "XXX"
-                        }
-                    ]
-                    
+  use-env:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
 
-                    
-                    
+      - name: Run custom action
+        uses: ./.github/actions/my-action
+        with:
+          envs: |
+            [
+              {
+                "branch": "demo",
+                "VAR_1": 123
+              },
+              {
+                "branch": "dev",
+                "VAR_X": "XXX"
+              }
+            ]
