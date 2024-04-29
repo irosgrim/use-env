@@ -18,7 +18,7 @@ jobs:
                         {
                             "branch": "dev"
                             "VAR_X": "XXX"
-                        },
+                        }
                     ]
                     
 
