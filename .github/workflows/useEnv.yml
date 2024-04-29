@@ -9,7 +9,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: ./
               with:
-                envs:
+                envs: |
                     BRANCH=demo
                     VAR1=hello
                     VAR2=world
