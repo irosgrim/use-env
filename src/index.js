@@ -1,21 +1,18 @@
-const {getMultilineInput, setFailed, setOutput} = require("@actions/core");
+const core = require('@actions/core');
 
-async function run() {
-    const envs = getMultilineInput("envs");
-    try {
-        if (!envs) {
-            throw new Error("No envs specified");
-        }
-        console.log({envs});
-        
-        const env = JSON.parse(envs);
-        console.log(env);
+try {
+  const envsInput = core.getInput('envs');
+  const environments = JSON.parse(envsInput);
 
-        setOutput("some-env", "value-xxxx");
-        
-    } catch (error) {
-        setFailed(`Couldn't do much: ${error}`);
-    }
+  environments.forEach(env => {
+    console.log(`Branch: ${env.branch}`);
+    Object.keys(env).forEach(key => {
+      if (key !== 'branch') {
+        console.log(`  ${key}: ${env[key]}`);
+      }
+    });
+  });
+
+} catch (error) {
+  core.setFailed(`Failed to parse input or perform action: ${error.message}`);
 }
-
-run();
