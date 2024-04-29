@@ -7,8 +7,6 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm install
       - name: Setup variables based on branch
         id: get_vars
         uses: ./use-env
