@@ -1,11 +1,8 @@
-name: 'Hello world'
-description: 'testing actions'
+name: 'Use env'
+description: 'Use variables for specified branch'
 author: 'ion'
 
 inputs:
-  branch:
-    description: 'Output variables for this branch'
-    required: true
   variables:
     description: 'YAML string containing variables config'
     required: true
@@ -16,5 +13,20 @@ outputs:
     description: 'the vars'
 
 runs:
-  using: node20
-  main: src/index.js
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Ensure this matches the Node.js version you need
+
+    - name: Install dependencies
+      run: npm install
+      shell: bash
+      working-directory: ${{ github.action_path }}
+
+    - name: Run script
+      run: node src/index.js
+      shell: bash
+      working-directory: ${{ github.action_path }}
+

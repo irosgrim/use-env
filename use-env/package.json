@@ -1,13 +1,12 @@
 {
   "name": "use-env",
+  "description": "Use variables for specified branch",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/index.js",
   "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
   "dependencies": {
     "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
     "js-yaml": "^4.1.0"
   }
 }
