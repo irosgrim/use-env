@@ -1,0 +1,17 @@
+name: 'Use env'
+description: 'Use variables for specified branch'
+author: 'ion'
+
+inputs:
+  variables:
+    description: 'YAML string containing variables config'
+    required: true
+
+outputs:
+  #dynamic
+  key:
+    description: 'the vars'
+
+runs:
+  using: node20
+  main: src/index.js
