@@ -12,24 +12,18 @@ jobs:
         uses: ./use-env
         with:
           branch: ${{github.ref == 'refs/heads/main' && 'prod' || github.ref == 'refs/heads/demo' && 'demo' || github.ref == 'refs/heads/dev' && 'dev'}}
-          envs: |
-            [
-              {
-                "branch": "prod",
-                "VAR_X": "PRODUCTION-STUFF",
-                "VAR_Y": "HELLO WORLD"
-              },
-              {
-                "branch": "demo",
-                "VAR_X": "aaaa-demo",
-                "VAR_Y": 42
-              },
-              {
-                "branch": "dev",
-                "VAR_X": "bbbb-dev",
-                "VAR_Y": "some string"
-              }
-            ]
+          variables: |
+            - branch: main
+              VAR_X: PRODUCTION-STUFF
+              VAR_Y: HELLO WORLD
+
+            - branch: dev
+              VAR_X: DEV-STUFF
+              VAR_Y: 42
+
+            - branch: demo
+              VAR_X: DEMO-VAR
+              VAR_Y: 99
       - name: Use outputs
         run: |
           echo "Output VAR_X: ${{ steps.get_vars.outputs.VAR_X }}"

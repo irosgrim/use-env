@@ -4,13 +4,11 @@ author: 'ion'
 
 inputs:
   branch:
-    description: 'provide branch name'
+    description: 'Output variables for this branch'
     required: true
-    default: ''
-  envs:
-    description: 'envs'
+  variables:
+    description: 'YAML string containing variables config'
     required: true
-    default: ''
 
 outputs:
   #dynamic
