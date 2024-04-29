@@ -1,0 +1,16 @@
+name: "Use env"
+on:
+    workflow_dispatch:
+
+jobs:
+    use-env:
+        runs-on: "ubuntu-latest"
+        steps:
+            - uses: actions/checkout@v2
+            - uses: ./
+              with:
+                envs: |
+                    "Hello world"
+                    "Bla bla bla"
+                    "XXX 123"
+                    "VAR1 = xxxx"
