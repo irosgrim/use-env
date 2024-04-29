@@ -13,7 +13,7 @@ outputs:
     description: 'the vars'
 
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -30,3 +30,5 @@ runs:
       shell: bash
       working-directory: ${{ github.action_path }}
 
+
+  
