@@ -21,8 +21,8 @@ jobs:
         with:
           variables: |
             - branch: main
-              VAR_X: PRODUCTION-STUFF
-              VAR_Y: 123
+              VAR_X: ${{ env.xxx }}
+              VAR_Y: ${{ env.aaa }}
 
             - branch: dev
               VAR_X: DEV-STUFF
